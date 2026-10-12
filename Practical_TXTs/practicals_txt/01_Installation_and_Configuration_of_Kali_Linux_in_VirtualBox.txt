@@ -26,8 +26,59 @@ Procedure:
   17. Devices → Insert Guest Additions CD image → open the mounted CD → run ./VBoxLinuxAdditions.run → reboot
       for better display resolution and clipboard sharing.
 
+same same another
 
+Practical 1: Install and Configure Kali Linux in VirtualBox
 
+Aim: To install and configure Kali Linux in Oracle VirtualBox.
 
-                                                              3
+Requirements:
+
+Windows computer
+
+Oracle VirtualBox
+
+Official Kali Linux ISO
+
+Minimum 4 GB RAM recommended for the VM; more is helpful
+
+Procedure:
+
+Download VirtualBox from the official 
+VirtualBox website
+.
+
+Download the Kali Linux installer ISO from 
+Kali Linux Downloads
+.
+
+Open VirtualBox and click New.
+
+Name the VM Kali Linux and select Linux/Debian (64-bit).
+
+Allocate RAM and create a virtual hard disk (around 40 GB is a practical starting point).
+
+Attach the Kali ISO through the VM's optical drive settings.
+
+Start the VM and select Graphical Install.
+
+Choose language, location, keyboard, username and password.
+
+Complete partitioning of the virtual disk, install the bootloader and reboot.
+
+Remove the installer ISO if the installer starts again.
+
+Log in and verify the system.
+
+Useful commands:
+
+whoami
+uname -a
+ip addr
+cat /etc/os-release
+
+Expected output: The terminal displays your username, Linux kernel/system information, network interfaces and Kali Linux release details. Exact output depends on your installation.
+
+Result: Kali Linux is installed and configured successfully in VirtualBox.
+                                                              
 
