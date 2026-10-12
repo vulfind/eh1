@@ -1,0 +1,1187 @@
+COMPLETE CYBERSECURITY
+PRACTICAL JOURNAL
+
+
+
+Practical 1: Install and configure Kali Linux in VirtualBox
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Kali ISO, VirtualBox
+Detailed procedure
+1. Open VirtualBox
+2. New
+3. name the VM Kali Linux
+4. choose Linux/Debian (64-bit)
+5. allocate RAM and a virtual disk appropriate for your PC
+6. attach the official Kali ISO under Settings
+7. Storage
+8. start the VM
+9. follow the installer
+10. reboot and remove/eject the ISO if prompted
+11. log in.
+Commands / settings
+whoami
+cat /etc/os-release
+ip addr
+ip route
+Expected result (example): Kali desktop starts; commands show the logged-in user, OS details, interfaces and routes.
+Troubleshooting / safety: If the VM does not boot, check that the ISO is attached and the VM type/architecture is correct.
+If networking is absent, inspect Settings fi Network and the guest interface.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output
+
+
+Practical 2: Install and configure Windows in VirtualBox
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Windows ISO and valid licence, VirtualBox
+Detailed procedure
+1. VirtualBox
+2. New
+3. name Windows
+4. select Windows type/version
+5. allocate RAM/CPU and a virtual disk
+6. attach the ISO
+7. Start
+8. follow Windows Setup
+9. select the virtual disk
+10. complete first-run setup
+11. install Guest Additions if appropriate
+12. take a snapshot after setup.
+Commands / settings
+ipconfig
+systeminfo
+Expected result (example): Windows desktop opens and system/network configuration is displayed.
+Troubleshooting / safety: If no boot device appears, check the ISO attachment. Use a licence and ISO you are entitled to
+use.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 3: Prepare an isolated Metasploitable training target
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Metasploitable lab image, VirtualBox
+Detailed procedure
+1. Import/open the training VM
+2. before booting, open Settings
+3. Network
+4. attach it to Internal Network or an appropriately configured Host-only network
+5. keep it off Bridged networking/public internet
+6. start it
+7. log in using the lab image's documented credentials
+8. record its lab IP
+9. take a snapshot.
+Commands / settings
+ip addr   # on Kali
+ip route
+Expected result (example): The target starts and has an address on the isolated lab network.
+Troubleshooting / safety: If Kali cannot reach it, confirm both VMs use the same isolated network and check their
+IP/subnet. Do not expose a deliberately vulnerable VM to the internet.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 4: WHOIS lookup
+Cybersecurity Practical Journal • Authorized lab use only
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Terminal or a WHOIS website; use an assigned domain
+Detailed procedure
+1. Open Kali Terminal
+2. run the lookup on a permitted domain assigned for the exercise
+3. review registrar, creation/expiry dates, name servers and status fields
+4. note that privacy-protected fields may be redacted
+5. capture the result.
+Commands / settings
+whois example.com
+Expected result (example): WHOIS/RDAP registration information appears if the registry publishes it; fields vary by
+domain.
+Troubleshooting / safety: If `whois` is missing, install it using the distribution package manager. Network restrictions or
+registry policy may limit results.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 5: DNS lookup using nslookup and dig
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Kali Terminal; assigned domain
+Detailed procedure
+1. Open Terminal
+2. query the domain's A/AAAA records
+3. query MX records
+4. query NS records
+5. compare results and TTL values
+6. record which resolver answered.
+Commands / settings
+nslookup example.com
+dig example.com A
+dig example.com MX
+dig example.com NS
+Expected result (example): DNS responses show available records, answer section and TTL; some record types may be
+absent.
+Troubleshooting / safety: NXDOMAIN means the queried name does not exist in DNS; timeout may indicate
+resolver/network trouble. Use only ordinary DNS queries.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 6: Nmap TCP connect scan
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Kali and an authorized lab target
+Detailed procedure
+1. Confirm the target IP from the lab console
+2. verify both VMs are on the same isolated network
+3. run a TCP connect scan against that target only
+4. note open/closed/filtered ports
+5. compare with the target's services if available.
+Commands / settings
+nmap -sT LAB_TARGET_IP
+Expected result (example): Nmap reports discovered TCP port states; exact ports depend on the target configuration.
+Troubleshooting / safety: If all ports appear filtered or host seems down, check IP, firewall, VM network mode and target
+power state.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 7: Nmap SYN scan
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Kali with authorized lab target; privileges may be needed
+Detailed procedure
+1. Confirm target is your lab VM
+2. open Terminal
+3. run a SYN scan only against the lab IP
+4. review the port-state column
+5. explain that SYN scan uses TCP handshake behaviour and may need elevated privileges.
+Commands / settings
+sudo nmap -sS LAB_TARGET_IP
+Expected result (example): A list of discovered TCP port states appears; actual results depend on the lab.
+Troubleshooting / safety: Use the lab IP only. Permission errors may mean the command needs `sudo`; unreachable
+results usually indicate network configuration.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 8: Nmap UDP scan
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Authorized lab target
+Detailed procedure
+1. Confirm lab isolation
+2. select only the assigned target
+3. run a limited UDP scan of common ports to keep the exercise manageable
+4. note that UDP results can be slower and ambiguous.
+Commands / settings
+sudo nmap -sU --top-ports 20 LAB_TARGET_IP
+Expected result (example): Ports may show open, closed or open|filtered; no response does not prove a service is
+absent.
+Troubleshooting / safety: UDP scanning is slower than many TCP scans. `open|filtered` means Nmap cannot distinguish
+open from filtered from the response received.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 9: Nmap FIN scan
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Authorized lab target
+Detailed procedure
+1. Use only the isolated lab target
+2. run the FIN scan
+3. inspect state results
+4. explain that firewalls and operating systems can affect interpretation; do not treat this scan as definitive.
+Commands / settings
+sudo nmap -sF LAB_TARGET_IP
+Expected result (example): Nmap lists port states inferred from responses or lack of response.
+Troubleshooting / safety: FIN scan behaviour varies by OS/firewall; compare with another permitted scan and describe
+uncertainty.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 10: Nmap host discovery
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Isolated lab subnet assigned by instructor
+Detailed procedure
+1. Find the lab subnet from `ip addr` and `ip route`
+2. verify the exact assigned subnet with the instructor
+3. run host discovery only on that lab subnet
+4. list responding hosts and identify your own VMs.
+Commands / settings
+nmap -sn LAB_SUBNET
+Expected result (example): Nmap reports hosts that responded to discovery probes.
+Troubleshooting / safety: Do not scan campus, public, or shared networks. Host discovery may miss hosts that block
+probes.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 11: OS detection and service versions
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Authorized lab target
+Detailed procedure
+1. Run a service/version scan against the lab IP
+2. if permitted and needed, enable OS detection
+3. read port, service and version columns
+4. record that fingerprints are estimates, not guarantees.
+Commands / settings
+sudo nmap -sV -O LAB_TARGET_IP
+Expected result (example): Nmap attempts to identify services/versions and may suggest an OS match when enough
+evidence is available.
+Troubleshooting / safety: OS detection may need privileges and several open/closed ports. Version guesses can be
+uncertain.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 12: Nmap network topology map
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Small isolated lab subnet
+Detailed procedure
+1. Confirm the exact isolated subnet
+2. run a host-discovery scan
+3. optionally save output to a text file
+4. sketch only the VMs you own and their IP addresses
+5. label the diagram as observed on the exam date.
+Commands / settings
+nmap -sn LAB_SUBNET
+nmap -sn -oN lab-hosts.txt LAB_SUBNET
+Expected result (example): A list of responsive lab hosts is saved/displayed and can be used to draw a simple topology.
+Troubleshooting / safety: If no hosts are shown, verify the subnet mask, VM network mode and host firewall. Never map
+a network without authorization.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 13: Kali in VMware and compare with VirtualBox
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: VMware Player/Workstation if installed; Kali image
+Detailed procedure
+1. If VMware is available, create/import a Kali VM
+2. allocate resources
+3. attach the ISO/image
+4. boot and verify with OS commands
+5. compare VM creation, snapshots, network settings and resource usage with VirtualBox. If not installed, explain the
+comparison theoretically rather than installing under time pressure.
+Commands / settings
+cat /etc/os-release
+ip addr
+Expected result (example): Kali starts in the selected hypervisor; comparison notes identify similarities and differences.
+Troubleshooting / safety: Do not install a second hypervisor during the exam unless required. Hypervisor features and
+menus differ by version.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 14: Passive OSINT using theHarvester
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Kali and an instructor-approved domain
+Detailed procedure
+1. Check the installed tool and its help
+2. use only the domain assigned for passive OSINT
+3. choose a supported source
+4. run a limited query
+5. review public names/hosts/emails returned, if any
+6. document source and limitations.
+Commands / settings
+theHarvester -h
+# Example syntax varies by version:
+theHarvester -d example.com -b duckduckgo
+Expected result (example): Help or query results appear; a source may return no records because of rate limits or source
+changes.
+Troubleshooting / safety: Use public, authorized scope only. Source names and syntax change across versions; consult
+`-h`. Do not target individuals or collect private information.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 15: Maltego relationship graph
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Maltego Community Edition or approved alternative
+Detailed procedure
+1. Open Maltego
+2. sign in/create the required account if prompted
+3. create a new graph
+4. add a Domain entity for an approved example domain
+5. run only available passive transforms
+6. review links
+7. label the graph and export a screenshot.
+Commands / settings
+GUI practical; no shell command required
+Expected result (example): A graph may show relationships such as domain, DNS names or public records, depending
+on transforms and account limits.
+Troubleshooting / safety: Some transforms require an account, API credits or may be unavailable. Do not infer a
+relationship solely from a graph edge without checking its source.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 16: SMB enumeration with Nmap
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Isolated training target with permission
+Detailed procedure
+1. Confirm target IP and isolation
+2. run the Nmap SMB script only against the lab target
+3. record whether SMB ports/services are exposed
+4. avoid attempting login or accessing shares unless explicitly part of the authorized lab.
+Commands / settings
+nmap -p 139,445 --script smb-protocols,smb-os-discovery LAB_TARGET_IP
+Expected result (example): If SMB is present, script output may list protocol or host information; scripts can also return
+no results.
+Troubleshooting / safety: No output can mean SMB is closed/filtered or scripts could not obtain information. Keep target
+inside the lab.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 17: SMB enumeration with enum4linux
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Isolated training target
+Detailed procedure
+1. Check availability with `enum4linux -h`
+2. confirm lab target
+3. run a basic enumeration query
+4. observe which information is exposed
+5. record findings and a mitigation such as disabling SMBv1 and restricting shares.
+Commands / settings
+enum4linux -h
+enum4linux -a LAB_TARGET_IP
+Expected result (example): The tool may display workgroup, users, shares or policy information depending on target
+configuration.
+Troubleshooting / safety: Modern servers often restrict anonymous enumeration. Do not try credentials or access data
+beyond the approved exercise.
+Page 10
+Cybersecurity Practical Journal • Authorized lab use only
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 18: SNMP enumeration with Nmap/snmpwalk
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Isolated lab device configured for SNMP
+Detailed procedure
+1. Confirm instructor has enabled SNMP on the lab target
+2. check UDP/161 reachability
+3. use the provided community string only if explicitly assigned
+4. query only approved system information
+5. record exposure and remediation.
+Commands / settings
+nmap -sU -p 161 LAB_TARGET_IP
+# If approved and configured:
+snmpwalk -v2c -c LAB_COMMUNITY LAB_TARGET_IP system
+Expected result (example): SNMP may be reported open or filtered; `snmpwalk` may show system OID values if the lab
+service permits the query.
+Troubleshooting / safety: Never guess or brute-force community strings. SNMP may be absent or blocked; a timeout is
+not proof that the host is down.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 19: Basic Linux commands
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Kali Terminal
+Detailed procedure
+1. Open Terminal
+2. run each command
+3. explain what it displays
+4. use `pwd` and `ls` to orient yourself
+5. use `mkdir` and `touch` only in your home directory
+6. remove only your own test file.
+Commands / settings
+pwd
+ls -la
+Page 11
+Cybersecurity Practical Journal • Authorized lab use only
+whoami
+id
+uname -a
+df -h
+ip addr
+mkdir -p ~/practical-demo && touch ~/practical-demo/test.txt
+Expected result (example): Commands display current path, files, user, groups, kernel, disk usage and network details;
+test file is created in your home folder.
+Troubleshooting / safety: Check spelling and permissions. Avoid running destructive commands as root; never use `rm-rf` on unknown paths.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 20: Install DVWA in Kali
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Kali VM; use a local-only web lab
+Detailed procedure
+1. Install the web server, PHP modules and database using Kali package tools
+2. start Apache/database services
+3. place DVWA in the web root using its official project files
+4. configure the local database per its documentation
+5. copy the sample config to the active config filename
+6. open `http://127.0.0.1/DVWA/`
+7. complete setup page
+8. log in with the lab's documented default credentials and change them if required.
+Commands / settings
+sudo systemctl status apache2
+sudo systemctl status mariadb
+ip addr
+Expected result (example): DVWA setup/login page appears locally when services and database are configured
+correctly.
+Troubleshooting / safety: If blank/error page appears, inspect Apache/PHP logs, database service and DVWA config.
+Keep DVWA bound to localhost or an isolated lab network; do not expose it publicly.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 21: DVWA security levels
+Aim: To perform the task in an authorized lab and record the actual result.
+Page 12
+Cybersecurity Practical Journal • Authorized lab use only
+Requirements: DVWA local lab
+Detailed procedure
+1. Log in
+2. open DVWA Security
+3. select Low
+4. submit
+5. visit one training module and observe behaviour
+6. repeat only as the lab syllabus requires with Medium/High/Impossible
+7. record how validation/defences change.
+Commands / settings
+GUI practical
+Expected result (example): The selected security level is shown and module behaviour changes between levels.
+Troubleshooting / safety: The setting may reset after logout/config changes. Do not test the vulnerable app outside your
+own local lab.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+
+Practical 22: Map DVWA modules to OWASP Top 10
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: DVWA and current OWASP Top 10 reference
+Detailed procedure
+1. List each DVWA module used in the journal
+2. identify the relevant risk category
+3. note that DVWA modules do not cover every OWASP category and category numbering can change by edition
+4. include mitigation beside each mapping.
+Commands / settings
+No command required; use DVWA menu and your course's OWASP edition
+Expected result (example): A table links module, observed behaviour, risk, evidence and mitigation.
+Troubleshooting / safety: Do not claim DVWA demonstrates all Top 10 categories. State the OWASP edition/year used.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 23: SQL Injection in DVWA
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: DVWA local-only lab; Low security level for demonstration
+Detailed procedure
+1. Log in to local DVWA
+2. open SQL Injection
+3. read the module prompt
+4. use only the course-approved demonstration input on the local test database
+5. submit
+6. observe whether the page returns unexpected records/errors
+7. capture evidence
+8. explain parameterized queries as the fix.
+Commands / settings
+GUI practical; use only the course-provided local-lab test input
+Expected result (example): The local module may return one or more training records or a database response,
+depending on version/settings.
+Troubleshooting / safety: If the module fails, check DVWA security level and database setup. Never reuse injection tests
+against real websites.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 24: Reflected XSS in DVWA
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Local DVWA only
+Detailed procedure
+1. Open Reflected XSS
+2. enter a harmless course-approved test string in the input
+3. submit
+4. inspect how the page renders it
+5. if the lab requires a harmless proof-of-concept, use only the exact lab-approved payload
+6. explain output encoding as mitigation.
+Commands / settings
+GUI practical
+Expected result (example): The input may be reflected on the page; whether it executes depends on security level and
+input handling.
+Troubleshooting / safety: Use harmless test data only and do not steal cookies, tokens or session information.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 25: Stored XSS in DVWA
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Local DVWA only
+Detailed procedure
+1. Open Stored XSS
+2. submit a harmless marker to the training guestbook/input
+3. revisit the page
+4. check whether the marker persists
+5. if course requires an approved PoC, run it only in the local lab
+6. remove test entry if possible
+7. describe output encoding and input validation.
+Commands / settings
+GUI practical
+Expected result (example): The marker may persist and display on reload; behaviour depends on module configuration.
+Troubleshooting / safety: Do not test on public guestbooks or real user content. Clear test entries after the practical.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+
+Practical 26: DOM-based XSS in DVWA
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Local DVWA only
+Detailed procedure
+1. Open DOM XSS module
+2. inspect the URL and page behaviour
+3. use a harmless lab input to observe how client-side code handles it
+4. view page source/dev tools if permitted
+5. explain safe DOM APIs and context-aware encoding.
+Commands / settings
+Browser GUI; no network target needed
+Expected result (example): The page behaviour changes based on client-side input; exact result depends on the DVWA
+version/security level.
+Troubleshooting / safety: Do not run arbitrary scripts in a real site. Keep demonstrations inside localhost DVWA.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 27: CSRF concepts in DVWA
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Local DVWA only; test account
+Detailed procedure
+1. Open the CSRF module
+2. review the action and its parameters
+3. use only the training account and lab-provided demonstration
+4. observe whether a state-changing action lacks adequate protection
+5. explain anti-CSRF tokens, SameSite cookies and re-authentication for sensitive actions.
+Commands / settings
+GUI practical
+Expected result (example): The module shows its configured training behaviour; do not assume every real application is
+vulnerable.
+Troubleshooting / safety: Never induce a real user to submit a state-changing request. Reset the lab account after
+testing.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 28: File upload validation in DVWA
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Local DVWA only; harmless test file
+Detailed procedure
+1. Open File Upload
+2. create a harmless text file in your home directory
+3. upload it through the training module
+4. observe accepted/rejected file type and where it is stored
+5. record validation behaviour
+6. explain allowlists, server-side MIME/content checks, random names and storage outside web root.
+Commands / settings
+GUI practical; create harmless file with `printf 'lab test' > ~/upload-test.txt`
+Expected result (example): The lab reports upload success or rejection depending on security level and allowed file
+types.
+Troubleshooting / safety: Do not upload web shells or malicious files. Use only harmless files and the local lab.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 29: Burp Suite proxy and HTTP history
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Burp Suite and local DVWA browser
+Detailed procedure
+1. Open Burp Suite
+2. create a temporary project
+3. use default settings
+4. open Proxy settings and confirm listener
+5. configure the browser to use the local proxy as instructed
+6. visit only local DVWA
+7. check Proxy
+8. HTTP history
+9. select a request and inspect request/response
+10. turn interception off when finished.
+Commands / settings
+GUI practical
+Expected result (example): HTTP requests to local DVWA appear in history when the browser is correctly proxied.
+Troubleshooting / safety: If history is empty, check browser proxy settings, listener address/port and whether traffic is
+going through the configured browser. Do not capture other people's traffic.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 30: Burp Intruder basics on DVWA
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Burp Suite and local DVWA test account
+Detailed procedure
+1. Use only a local DVWA form
+2. send the request to Intruder
+3. mark the intended lab parameter
+4. use a tiny set of dummy values supplied by the instructor
+5. run a low-volume test
+6. compare status/length responses
+7. stop and clear the attack when complete.
+Page 17
+Cybersecurity Practical Journal • Authorized lab use only
+Commands / settings
+GUI practical; dummy credentials only
+Expected result (example): Intruder shows one row per test value and response metadata; differences may indicate
+differing application responses.
+Troubleshooting / safety: Do not brute-force real accounts or use large wordlists. Keep the test local and rate-limited.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 31: John the Ripper with a dummy hash
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Kali, a generated sample hash
+Detailed procedure
+1. Create a text file containing only the instructor's sample hash
+2. identify its hash format from the exercise sheet
+3. run John against that file and a permitted small test wordlist
+4. display recovered test result if found
+5. explain why strong salted hashes resist guessing.
+Commands / settings
+john --list=formats | head
+john --wordlist=/usr/share/wordlists/rockyou.txt --format=FORMAT sample-hash.txt
+john --show sample-hash.txt
+Expected result (example): John reports progress and may or may not recover the dummy password; recovery is not
+guaranteed.
+Troubleshooting / safety: Use only lab-generated hashes. If the wordlist is compressed or absent, use the
+instructor-provided small wordlist and correct format.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 32: Hashcat with a dummy hash
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Kali and a sample hash generated for class
+Detailed procedure
+1. Confirm the hash type from the lab sheet
+2. put only the dummy hash in a file
+3. check Hashcat help/mode list
+4. run a small dictionary test with the assigned mode
+Page 18
+Cybersecurity Practical Journal • Authorized lab use only
+5. record whether the sample is recovered and discuss password length/salting.
+Commands / settings
+hashcat -h
+# Run only with the mode and sample file assigned by your instructor
+Expected result (example): Hashcat shows the selected mode, progress and possibly a recovered dummy value; it may
+not crack the sample.
+Troubleshooting / safety: Wrong mode produces errors or no match. Never use hashes obtained from real accounts or
+systems.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 33: Hydra/SSH brute-force risk simulation
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Dedicated isolated SSH lab with explicit instructor approval
+Detailed procedure
+1. Confirm the SSH server is a disposable lab VM and the instructor has approved a very small test
+2. use a designated dummy account and a tiny instructor-provided list
+3. run only the class-prescribed command
+4. stop after the demonstration
+5. discuss lockout, MFA, keys and rate limits.
+Commands / settings
+hydra -h
+# Use the instructor's exact low-volume lab command only; do not target real hosts/accounts.
+Expected result (example): Help text appears; if the authorized lab test is run, results depend on the dummy
+service/account configuration.
+Troubleshooting / safety: Do not run brute-force attempts against public IPs, shared servers or personal accounts. If no
+dedicated lab exists, demonstrate help output and explain the risk conceptually.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 34: Metasploit Framework navigation
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Kali; isolated training lab
+Detailed procedure
+1. Open Terminal
+2. start the framework console
+3. wait for initialization
+4. use help/search to navigate modules
+5. inspect module information without launching an exploit
+6. exit cleanly
+7. explain module types and the importance of scope.
+Commands / settings
+msfconsole
+help
+search type:auxiliary scanner
+exit
+Expected result (example): Metasploit console opens and help/search results are displayed.
+Troubleshooting / safety: First start can be slow. If unavailable, check installation and services. Do not run exploit
+modules against systems without explicit authorization.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 35: SMB risk review with Metasploit auxiliary scanner
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Authorized isolated training target only
+Detailed procedure
+1. Verify lab target and approval
+2. open Metasploit
+3. search for SMB-related auxiliary scanners
+4. read module information and required options
+5. configure only the approved lab target
+6. run a non-destructive check only if explicitly assigned
+7. record findings and mitigations.
+Commands / settings
+msfconsole
+search smb
+# Read module info before any use
+Expected result (example): Search results show available modules; scan output depends on the lab target and selected
+module.
+Troubleshooting / safety: Avoid exploit modules or destructive checks. If scope is unclear, stop at module search/info
+and explain the concept.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 36: OpenVAS/Greenbone vulnerability scan and report
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Greenbone/OpenVAS installed; isolated lab target
+Detailed procedure
+1. Open the Greenbone web interface
+2. sign in
+3. verify feeds/status are ready
+4. create a target for the isolated training VM
+5. create/select a conservative scan task
+6. run only within the lab
+7. wait for completion
+8. open report
+9. record severity, evidence and remediation
+10. export the report if available.
+Commands / settings
+Check service status using the service names installed on your Kali version; names vary.
+Expected result (example): A report may list findings with severity levels if feeds are current and the target is reachable.
+Troubleshooting / safety: Feed sync can take a long time. Do not scan public or campus networks. Findings require
+validation and are not automatically proof of exploitability.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+
+Practical 37: Wireshark packet capture
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Wireshark and a lab interface
+Detailed procedure
+1. Open Wireshark
+2. select the lab interface with traffic
+3. start capture
+4. generate benign traffic to your own VM (for example, ping the lab IP)
+5. stop capture
+6. use display filter `icmp` or `dns`
+7. select a packet and inspect layers
+8. save a `.pcapng` file with no private traffic.
+Commands / settings
+ping -c 4 LAB_TARGET_IP
+# Wireshark display filter: icmp
+Expected result (example): Packets appear if traffic traverses the selected interface; packet details show protocol layers.
+Troubleshooting / safety: If no packets appear, choose the active interface and generate traffic during capture. Do not
+capture other users' private traffic.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 38: Capture Windows–Linux lab traffic
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Windows VM, Kali VM on the same isolated network, Wireshark
+Detailed procedure
+1. Confirm both VMs share the intended isolated network
+2. note both IPs using `ip addr` and `ipconfig`
+3. start Wireshark on the relevant interface
+4. from Windows ping Kali or vice versa
+5. stop capture and filter `icmp`
+6. inspect source/destination addresses and echo request/reply.
+Commands / settings
+Windows: `ipconfig` then `ping KALI_LAB_IP`
+Kali: `ip addr`
+Expected result (example): ICMP packets appear if the network and firewall permit them; ping replies may be blocked by
+firewall.
+Troubleshooting / safety: If no reply, check IP/subnet, adapter mode and Windows firewall. A failed ping does not alone
+prove the VM is offline.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 39: Shodan passive reconnaissance
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Browser and instructor-approved public example
+Detailed procedure
+1. Open Shodan's website
+2. search a permitted public example or a record provided by the instructor
+3. inspect service banners, ports and last-seen data
+4. distinguish indexed data from a live scan
+5. record date and source
+6. do not attempt to connect to or exploit a device.
+Commands / settings
+No command required; passive website review
+Expected result (example): Search results depend on account access, query limits and Shodan's index.
+Troubleshooting / safety: Do not search for or investigate a private person's device. Do not treat old banners as current
+state.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 40: Public contact OSINT
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Approved organization/domain only
+Detailed procedure
+1. Define scope with instructor
+2. use official public websites and search engines
+3. collect only organization-level public contact details required for the assignment
+4. record URLs and date accessed
+5. avoid personal data beyond the authorized scope
+6. summarize privacy and ethical limits.
+Commands / settings
+No command required
+Expected result (example): Public contact pages may list a general email, phone or office address; results vary.
+Troubleshooting / safety: Do not harvest personal email lists or use data for unsolicited contact. Follow institutional policy
+and applicable law.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 41: Linux file permissions and weak-permission concepts
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Kali home directory
+Detailed procedure
+1. Create a test file in your home directory
+2. inspect permissions
+3. change permissions on that test file only
+4. compare symbolic and numeric permissions
+5. restore a sensible permission setting
+6. explain least privilege.
+Commands / settings
+touch ~/perm-demo.txt
+ls -l ~/perm-demo.txt
+chmod 600 ~/perm-demo.txt
+ls -l ~/perm-demo.txt
+Expected result (example): `ls -l` displays owner/group and permission bits; after `chmod 600`, owner has read/write and
+group/others have no access.
+Troubleshooting / safety: Use only your test file. Avoid changing system files or making files world-writable.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 42: Basic firewall and service exposure review
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Own Kali/Windows lab VM
+Detailed procedure
+1. Inspect which services are listening on your own VM
+2. check firewall status using the OS's supported tool
+3. compare listening ports with expected services
+4. disable only unnecessary lab services if the course permits
+5. document before/after states.
+Commands / settings
+ss -tulpen
+# On Windows: `netstat -ano`
+Expected result (example): A list of listening sockets/process details or Windows connection endpoints appears
+depending on privileges.
+Troubleshooting / safety: Commands vary by OS and permissions. Do not disable security controls on a managed
+computer.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 43: Censys passive service discovery
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Browser and approved public example
+Detailed procedure
+1. Open Censys Search
+2. query a domain or record explicitly assigned by the instructor
+Page 24
+Cybersecurity Practical Journal • Authorized lab use only
+3. review indexed certificates/hosts and timestamps
+4. note that results are observations from the provider's dataset
+5. cite the result URL/date in the report.
+Commands / settings
+No command required
+Expected result (example): Search results vary by access level, query and indexing date.
+Troubleshooting / safety: Use public records within the assignment scope. Do not probe or exploit discovered services.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 44: Compare NAT, bridged and host-only networking
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: VirtualBox and your lab VMs
+Detailed procedure
+1. Power off VM before changing adapter mode
+2. open Settings
+3. Network
+4. inspect Attached to options
+5. explain NAT as outbound access via host, Bridged as joining the physical LAN, and Host-only as host/VM private
+communication
+6. use Internal Network for VM-to-VM isolation where appropriate
+7. choose the safest mode for vulnerable labs.
+Commands / settings
+ip addr
+ip route
+# Windows: ipconfig
+Expected result (example): IP address and route change according to the selected adapter mode and network
+configuration.
+Troubleshooting / safety: Menu wording can vary. Avoid Bridged mode for intentionally vulnerable machines.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 45: Bettercap ARP spoofing/MITM concepts
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Conceptual demonstration; dedicated isolated lab only
+Detailed procedure
+1. Explain ARP's role in mapping IPv4 addresses to MAC addresses
+2. show Bettercap help/interface only unless an instructor has provided a dedicated two-client lab
+3. discuss how ARP spoofing can redirect traffic and how TLS, static controls and network protections reduce risk
+4. never capture credentials or third-party traffic.
+Commands / settings
+bettercap -h
+Expected result (example): Help output lists available options; no spoofing is performed in this safe walkthrough.
+Troubleshooting / safety: Do not run ARP spoofing on shared Wi-Fi, campus LAN or any network with uninvolved users.
+If the lab is not isolated, keep this theoretical.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 46: Nikto web server check
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Local DVWA or explicitly authorized lab web server
+Detailed procedure
+1. Confirm the web server belongs to your isolated lab
+2. verify the local URL in a browser
+3. run Nikto only against that lab URL
+4. review server headers, paths and potential configuration findings
+5. distinguish informational warnings from confirmed vulnerabilities.
+Commands / settings
+nikto -h
+# Example only for a local lab: nikto -h http://127.0.0.1/DVWA/
+Expected result (example): Nikto may list server information and possible issues; findings depend on
+configuration/version.
+Troubleshooting / safety: Do not scan third-party sites. Treat results as leads requiring validation, not proof.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+
+Practical 47: Inspect web security headers with curl
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Local DVWA or an assigned authorized URL
+Detailed procedure
+1. Request response headers from the lab URL
+2. identify headers such as Content-Security-Policy, X-Frame-Options, X-Content-Type-Options and
+Strict-Transport-Security where applicable
+3. record present/missing headers and explain context-dependent recommendations.
+Commands / settings
+curl -I http://127.0.0.1/DVWA/
+Expected result (example): HTTP status and response headers appear; some headers may be absent on a local HTTP
+lab.
+Troubleshooting / safety: HSTS applies to HTTPS, not plain HTTP. Missing headers do not automatically mean a
+complete application vulnerability.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
+
+
+Practical 48: Prepare final practical report and screenshot evidence
+Aim: To perform the task in an authorized lab and record the actual result.
+Requirements: Screenshots and actual observations from completed labs
+Detailed procedure
+1. For each practical, record date, aim, environment, exact commands/clicks, expected result, actual observed result,
+screenshot number, errors/fixes and conclusion
+2. hide passwords, tokens and private addresses when sharing
+3. check that screenshots match your own work
+4. submit in the required order.
+Commands / settings
+No command required
+Expected result (example): A report with reproducible steps and genuine evidence is complete.
+Troubleshooting / safety: Never fabricate outputs. Label expected examples separately from observed results and follow
+your college's format.
+Observed result: Write the output you actually saw, screenshot number, date and any error:
+______________________________________________
+Conclusion: The task was completed or attempted in the authorized lab, and the actual observations were recorded.
+Viva prompts: What is the purpose of this tool? What does the result mean? What are its limitations? What is one safe mitigation or best
+practice?
+Screenshots: Capture the setup/target, the key command or configuration, and the actual result. Never fabricate output.
