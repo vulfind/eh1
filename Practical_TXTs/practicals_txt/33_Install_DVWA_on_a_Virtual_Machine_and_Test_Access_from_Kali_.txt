@@ -1,0 +1,20 @@
+                                                                                               Cyber Security Practical Lab Manual
+
+Practical No. 33
+
+Install DVWA on a Virtual Machine and Test Access from Kali Linux
+Aim: To host DVWA on a separate VM and verify network access to it from a Kali Linux attacker machine.
+Tools / Requirements: Target VM (LAMP/XAMPP + DVWA installed as in Practical 6), Kali Linux
+Procedure:
+  1.   Complete the DVWA installation on the target VM (see Practical 6) and note its IP address (ip a).
+  2.   Ensure both VMs are on the same network (NAT Network/Bridged) so they can reach each other.
+  3.   From Kali, confirm port 80 is reachable: nmap -p 80 <dvwa-vm-ip>
+  4.   From Kali's browser, open http://<dvwa-vm-ip>/dvwa/login.php and log in with admin/password.
+  5.   Confirm the DVWA dashboard loads correctly over the network, proving remote accessibility for subsequent attack
+       practicals.
+
+
+
+
+                                                             35
+

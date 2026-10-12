@@ -1,0 +1,19 @@
+                                                                                             Cyber Security Practical Lab Manual
+
+Practical No. 7
+
+theHarvester – Email and Subdomain Enumeration
+Aim: To collect email addresses and subdomains of a target organisation using OSINT.
+Tools / Requirements: Kali Linux, theHarvester
+Procedure:
+  1.   Run: theHarvester -d example.com -b google
+  2.   Use multiple sources at once: theHarvester -d example.com -b all
+  3.   Review the discovered email addresses, subdomains, hostnames and IP addresses in the output.
+  4.   Save results to a file: theHarvester -d example.com -b all -f results
+  5.   Document findings for the reconnaissance report.
+
+
+
+
+                                                                9
+

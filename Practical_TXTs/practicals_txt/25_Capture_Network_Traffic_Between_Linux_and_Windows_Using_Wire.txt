@@ -1,0 +1,20 @@
+                                                                                            Cyber Security Practical Lab Manual
+
+Practical No. 25
+
+Capture Network Traffic Between Linux and Windows Using Wireshark
+Aim: To capture and analyse traffic exchanged between a Linux and a Windows host on the same network.
+Tools / Requirements: Kali Linux, Windows VM, Wireshark
+Procedure:
+  1.   Place both VMs on the same virtual network (Bridged or an Internal/NAT Network).
+  2.   Start a Wireshark capture on the interface of one host.
+  3.   From the Linux host, ping, SSH, or access an SMB share on the Windows host (or vice versa).
+  4.   Apply the filter: ip.addr==<other-host-ip>
+  5.   Analyse the ICMP/ARP/SMB packets exchanged and inspect handshake and payload details.
+  6.   Save the capture for documentation.
+
+
+
+
+                                                                 27
+

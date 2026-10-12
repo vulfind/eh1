@@ -1,0 +1,23 @@
+                                                                                                Cyber Security Practical Lab Manual
+
+Practical No. 28
+
+Brute-Force Login Attack in DVWA Using Burp Suite Intruder
+Aim: To perform a brute-force login attack against DVWA using Burp Suite's Intruder module.
+Tools / Requirements: Kali Linux, Burp Suite Community, DVWA (Low security), browser configured with Burp proxy
+Procedure:
+  1.   Configure the browser's proxy to 127.0.0.1:8080 and install Burp's CA certificate.
+  2.   Open the DVWA Brute Force module, attempt a login, and capture the resulting POST request in Burp Proxy →
+       HTTP history.
+  3.   Right-click the request → Send to Intruder.
+  4.   In the Positions tab, mark the password parameter as the payload position (clear other markers).
+  5.   In the Payloads tab, load a wordlist (e.g. a short password list).
+  6.   Click Start Attack and compare response Length/Status for each attempt — a differing length/status usually marks the
+       successful login.
+  7.   Record the valid credentials identified.
+
+
+
+
+                                                                30
+

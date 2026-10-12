@@ -1,0 +1,22 @@
+                                                                                                 Cyber Security Practical Lab Manual
+
+Practical No. 15
+
+DOM-Based XSS Attack in DVWA
+Aim: To demonstrate a DOM-based Cross-Site Scripting vulnerability, where the payload executes purely on the client side.
+Tools / Requirements: DVWA (Low security)
+Procedure:
+  1.   Open the XSS (DOM) module in DVWA.
+  2.   Note that the 'default' URL parameter is written directly into the page's HTML/JS by client-side script without server-
+       side sanitisation.
+  3.   Modify the URL: .../vulnerabilities/xss_d/?default=<script>alert(document.cookie)</script>
+  4.   Load the URL and observe the script executes immediately in the browser, without any page re-render from the
+       server.
+  5.   Explain the difference from Reflected XSS (server echoes input back) — here the vulnerable code runs entirely within
+       the DOM via JavaScript.
+
+
+
+
+                                                              17
+

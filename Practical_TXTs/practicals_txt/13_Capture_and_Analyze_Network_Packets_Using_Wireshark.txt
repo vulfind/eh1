@@ -1,0 +1,21 @@
+                                                                                               Cyber Security Practical Lab Manual
+
+Practical No. 13
+
+Capture and Analyze Network Packets Using Wireshark
+Aim: To capture live network traffic and analyse protocol-level details using Wireshark.
+Tools / Requirements: Kali Linux, Wireshark
+Procedure:
+  1.   Launch Wireshark and select the active interface (e.g. eth0).
+  2.   Click the shark-fin icon to start capturing.
+  3.   Generate traffic from another terminal/browser (e.g. ping or browse a website).
+  4.   Apply display filters as needed: http, dns, tcp.port==80, ip.addr==<ip>
+  5.   Right-click a TCP packet → Follow → TCP Stream to view the full conversation.
+  6.   Inspect the packet-details pane to study each protocol layer (Ethernet, IP, TCP/UDP, Application payload).
+  7.   Stop the capture and save it as a .pcap/.pcapng file for the report.
+
+
+
+
+                                                                15
+

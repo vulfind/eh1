@@ -1,0 +1,22 @@
+                                                                                                Cyber Security Practical Lab Manual
+
+Practical No. 17
+
+Reconnaissance Using Recon-ng
+Aim: To perform automated OSINT reconnaissance on a domain using the Recon-ng framework.
+Tools / Requirements: Kali Linux, recon-ng
+Procedure:
+  1.   Launch the tool: recon-ng
+  2.   Create a workspace: workspaces create <name>
+  3.   Install modules: marketplace install all (or a specific module, e.g. recon/domains-hosts/hackertarget)
+  4.   Load a module: modules load recon/domains-hosts/hackertarget
+  5.   Set the source domain: options set SOURCE example.com
+  6.   Run the module: run
+  7.   View gathered data: show hosts (and show domains, show contacts, etc. as populated by other modules).
+  8.   Document discovered hosts/subdomains for the recon report.
+
+
+
+
+                                                              19
+

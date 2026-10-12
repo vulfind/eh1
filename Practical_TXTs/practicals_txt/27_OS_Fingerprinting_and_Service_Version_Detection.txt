@@ -1,0 +1,18 @@
+                                                                                               Cyber Security Practical Lab Manual
+
+Practical No. 27
+
+OS Fingerprinting and Service Version Detection
+Aim: To identify a target's operating system and running service versions using Nmap.
+Tools / Requirements: Kali Linux, Nmap
+Procedure:
+  1.   OS detection (TCP/IP stack fingerprinting, needs root): sudo nmap -O <target-ip>
+  2.   Service/version detection (banner grabbing/probing): nmap -sV <target-ip>
+  3.   Combined aggressive scan (OS, version, default scripts, traceroute): sudo nmap -A <target-ip>
+  4.   Record the detected OS, confidence percentage, and the exact service versions for each open port.
+
+
+
+
+                                                             29
+

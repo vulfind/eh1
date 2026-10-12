@@ -1,0 +1,23 @@
+                                                                                                Cyber Security Practical Lab Manual
+
+Practical No. 6
+
+DVWA Installation and SQL Injection
+Aim: To install DVWA (Damn Vulnerable Web Application) and exploit the SQL Injection vulnerability.
+Tools / Requirements: Kali Linux / XAMPP, Apache, MySQL/MariaDB, PHP, DVWA source (GitHub)
+Procedure:
+  1.   Clone DVWA: git clone https://github.com/digininja/DVWA.git /var/www/html/dvwa
+  2.   Copy config/config.inc.php.dist to config/config.inc.php and set DB username/password.
+  3.   Start services: sudo service apache2 start && sudo service mysql start
+  4.   Browse to http://localhost/dvwa/setup.php and click 'Create / Reset Database'.
+  5.   Log in with admin / password, then go to DVWA Security and set the level to Low.
+  6.   Open the SQL Injection module. In the User ID field enter: 1' OR '1'='1
+  7.   Observe that all user records are dumped instead of just one — confirms the injection.
+  8.   Try a UNION-based extraction: 1' UNION SELECT user, password FROM users -- -
+  9.   Record the usernames and password hashes returned as proof of successful exploitation.
+
+
+
+
+                                                              8
+

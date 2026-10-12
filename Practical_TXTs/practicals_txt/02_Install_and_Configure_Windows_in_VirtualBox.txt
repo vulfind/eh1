@@ -1,0 +1,27 @@
+                                                                                                Cyber Security Practical Lab Manual
+
+Practical No. 2
+
+Install and Configure Windows in VirtualBox
+Aim: To install and configure a Windows operating system as a guest VM in VirtualBox.
+Tools / Requirements: Oracle VirtualBox, Windows 10/11 ISO, valid/trial product key (optional)
+Procedure:
+  1.   Open VirtualBox → New. Name: Windows, Type: Microsoft Windows, Version: matching edition (64-bit).
+  2.   Allocate RAM (4096 MB recommended) and create a VDI disk of 50–60 GB, dynamically allocated.
+  3.   Settings → Storage → attach the Windows ISO to the optical drive.
+  4.   Settings → System → enable EFI if required by the ISO; enable virtualization extensions.
+  5.   Start the VM; the Windows Setup wizard loads from the ISO.
+  6.   Choose language/time/keyboard → Install Now.
+  7.   Enter product key or click 'I don't have a product key' to install and activate later.
+  8.   Select the Windows edition, accept the license terms.
+  9.   Choose Custom: Install Windows only (advanced) → select the unallocated virtual disk → Next.
+  10. Wait for files to copy and the system to restart automatically through OOBE.
+  11. Create a local account (or Microsoft account), set privacy preferences, finish setup.
+  12. Devices → Insert Guest Additions CD image → run VBoxWindowsAdditions.exe → reboot for seamless mouse,
+      shared clipboard and better resolution.
+
+
+
+
+                                                                 4
+

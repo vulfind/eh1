@@ -1,0 +1,26 @@
+                                                                                                  Cyber Security Practical Lab Manual
+
+Practical No. 32
+
+Identify and Demonstrate the Top 10 Vulnerabilities in DVWA
+Aim: To walk through and demonstrate each core vulnerability class available in DVWA (OWASP Top-10 style).
+Tools / Requirements: DVWA (Low security for each module)
+Procedure:
+  1.   SQL Injection — module 'SQL Injection': inject 1' OR '1'='1 to dump all records.
+  2.   Reflected XSS — module 'XSS (Reflected)': inject <script>alert(1)</script> in the name field.
+  3.   Stored XSS — module 'XSS (Stored)': persist <script>alert(1)</script> via the guestbook.
+  4.   DOM XSS — module 'XSS (DOM)': manipulate the 'default' URL parameter.
+  5.   CSRF — module 'CSRF': craft a forged password-change request.
+  6.   File Upload — module 'File Upload': upload a PHP web shell.
+  7.   File Inclusion (LFI/RFI) — module 'File Inclusion': include ../../etc/passwd or a remote file.
+  8.   Command Injection — module 'Command Injection': append ; whoami to the ping input.
+  9.   Brute Force — module 'Brute Force': dictionary-attack the login form.
+  10. Weak/Insecure Session handling and CAPTCHA bypass — module 'Insecure CAPTCHA' / 'Weak Session IDs':
+      observe predictable session tokens.
+  11. Document each vulnerability, its root cause, and a mitigation for every module.
+
+
+
+
+                                                              34
+

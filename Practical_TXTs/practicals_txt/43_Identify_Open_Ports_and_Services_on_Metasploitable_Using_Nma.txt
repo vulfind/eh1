@@ -1,0 +1,21 @@
+                                                                                                Cyber Security Practical Lab Manual
+
+Practical No. 43
+
+Identify Open Ports and Services on Metasploitable Using Nmap
+Aim: To enumerate open ports, services and versions on a Metasploitable VM.
+Tools / Requirements: Kali Linux, Nmap, Metasploitable 2/3 VM
+Procedure:
+  1.   Full version scan: nmap -sV -p- <metasploitable-ip>
+  2.   Add default scripts for extra detail: nmap -sC -sV <metasploitable-ip>
+  3.   Expected notable open ports include: 21 (FTP – vsftpd, often backdoored), 22 (SSH), 23 (Telnet), 25 (SMTP), 80
+       (HTTP), 139/445 (SMB), 1099 (Java-RMI), 3306 (MySQL), 5432 (PostgreSQL), 6667 (IRC – UnrealIRCd
+       backdoor), 8180 (Tomcat).
+  4.   Tabulate each open port with its service, version, and any known associated vulnerability for follow-on exploitation
+       practicals.
+
+
+
+
+                                                             45
+

@@ -1,0 +1,25 @@
+                                                                                                  Cyber Security Practical Lab Manual
+
+Practical No. 45
+
+Set Up DVWA and Configure Security Levels (Low, Medium, High)
+Aim: To configure DVWA's built-in security levels and observe how each changes application behaviour.
+Tools / Requirements: DVWA (already installed as in Practical 6)
+Procedure:
+  1.   Log in to DVWA and open the 'DVWA Security' tab from the left menu.
+  2.   Select 'Low' from the Script Security dropdown and click Submit — no input sanitisation is applied; all vulnerabilities
+       are fully exploitable.
+  3.   Select 'Medium' — partial filtering is applied (e.g. addslashes(), basic blacklist filters); some payloads must be
+       adjusted to succeed.
+  4.   Select 'High' — stronger filtering/token-based protections are applied (e.g. parameterised-style checks, CSRF tokens);
+       most naive payloads fail.
+  5.   Select 'Impossible' — the module is implemented securely (prepared statements, proper encoding, tokens) as a secure-
+       coding reference.
+  6.   Repeat a chosen vulnerability (e.g. SQL Injection) at each level and record how the required payload and success rate
+       change.
+
+
+
+
+                                                               47
+

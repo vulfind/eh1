@@ -1,0 +1,24 @@
+                                                                                              Cyber Security Practical Lab Manual
+
+Practical No. 16
+
+NAT and Bridged Networking in VirtualBox
+Aim: To configure and compare NAT and Bridged networking modes for VirtualBox VMs.
+Tools / Requirements: Oracle VirtualBox, two VMs (e.g. Kali and target)
+Procedure:
+  1.   NAT mode: VM Settings → Network → Attached to: NAT. The VM shares the host's IP for outbound traffic; it is
+       isolated from the LAN and cannot be reached directly by other hosts.
+  2.   Test NAT: from the VM, ping 8.8.8.8 (works); from another LAN machine, try to ping/reach the VM's IP (fails, it is
+       NAT-ed).
+  3.   Bridged mode: VM Settings → Network → Attached to: Bridged Adapter → select the host's physical NIC. The VM
+       obtains its own IP on the physical LAN subnet (via DHCP or static).
+  4.   Test Bridged: run ip a inside the VM — the IP is in the same subnet as the host; other LAN devices can now
+       ping/reach the VM directly.
+  5.   For isolated attacker/target lab pairs, prefer an Internal Network or Host-only/NAT Network so the VMs can reach
+       each other without touching the real LAN.
+
+
+
+
+                                                            18
+

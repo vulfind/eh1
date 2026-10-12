@@ -1,0 +1,19 @@
+                                                                                              Cyber Security Practical Lab Manual
+
+Practical No. 29
+
+Passive Reconnaissance Using Shodan
+Aim: To perform passive reconnaissance on internet-facing devices/services using the Shodan search engine.
+Tools / Requirements: Web browser, Shodan account (shodan.io)
+Procedure:
+  1.   Create a free account at shodan.io.
+  2.   Run basic searches, e.g.: apache country:IN, or org:"Target Org", or hostname:example.com
+  3.   Use filters such as port:, os:, city: to narrow results.
+  4.   Review exposed banners, open ports, device types, and the Vulnerabilities tab for known CVEs on a result.
+  5.   Document exposed assets and associated risks for the report.
+
+
+
+
+                                                                  31
+

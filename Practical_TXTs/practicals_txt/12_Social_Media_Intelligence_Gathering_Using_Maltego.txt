@@ -1,0 +1,21 @@
+                                                                                                Cyber Security Practical Lab Manual
+
+Practical No. 12
+
+Social Media Intelligence Gathering Using Maltego
+Aim: To gather OSINT on a target (person/domain/organisation) using Maltego transforms.
+Tools / Requirements: Kali Linux, Maltego (Community Edition)
+Procedure:
+  1.   Launch Maltego and register/login with a free Community Edition (CE) account.
+  2.   Start a new graph and drag a Domain or Person entity onto the canvas.
+  3.   Enter the target value (e.g. example.com or a name).
+  4.   Right-click the entity → Run Transform → choose transforms such as 'To Email Address', 'To Social Network
+       Profiles', 'To Phone Numbers' (from the installed transform hub).
+  5.   Review the resulting graph of linked emails, social media profiles, domains and infrastructure.
+  6.   Export the graph/report for documentation.
+
+
+
+
+                                                              14
+

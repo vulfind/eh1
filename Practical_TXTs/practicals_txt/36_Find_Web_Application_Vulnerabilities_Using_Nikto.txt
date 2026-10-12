@@ -1,0 +1,19 @@
+                                                                                                 Cyber Security Practical Lab Manual
+
+Practical No. 36
+
+Find Web Application Vulnerabilities Using Nikto
+Aim: To scan a web application/server for known vulnerabilities and misconfigurations using Nikto.
+Tools / Requirements: Kali Linux, Nikto, target web server (e.g. DVWA host)
+Procedure:
+  1.   Run a basic scan: nikto -h http://<target-ip>
+  2.   Scan a specific port: nikto -h <target-ip> -p 8080
+  3.   Review the report for outdated server software, missing security headers, default/dangerous files and directories.
+  4.   Cross-reference flagged issues with CVE databases where version numbers are disclosed.
+  5.   Document findings and suggested remediation.
+
+
+
+
+                                                              38
+

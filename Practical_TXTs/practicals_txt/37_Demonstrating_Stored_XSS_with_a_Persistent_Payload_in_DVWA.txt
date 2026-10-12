@@ -1,0 +1,21 @@
+                                                                                                 Cyber Security Practical Lab Manual
+
+Practical No. 37
+
+Demonstrating Stored XSS with a Persistent Payload in DVWA
+Aim: To exploit the Stored XSS vulnerability in DVWA so the payload persists and executes for every visitor.
+Tools / Requirements: DVWA (Low security)
+Procedure:
+  1.   Open the XSS (Stored) module (the guestbook form).
+  2.   Enter a payload in the Message (and/or Name) field: <script>alert('Stored XSS')</script>
+  3.   Submit the form — the payload is saved to the database.
+  4.   Reload the page (or have another user visit it): the script executes automatically without re-submission, proving
+       persistence.
+  5.   Contrast with Reflected XSS, which only fires once per specially-crafted request/link; Stored XSS affects every
+       subsequent visitor until removed.
+
+
+
+
+                                                              39
+

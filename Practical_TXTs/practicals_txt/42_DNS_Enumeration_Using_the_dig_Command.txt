@@ -1,0 +1,21 @@
+                                                                                           Cyber Security Practical Lab Manual
+
+Practical No. 42
+
+DNS Enumeration Using the dig Command
+Aim: To enumerate various DNS records of a domain using the dig utility.
+Tools / Requirements: Kali Linux, dig (dnsutils package)
+Procedure:
+  1.   A record: dig example.com
+  2.   MX record: dig example.com MX
+  3.   NS record: dig example.com NS
+  4.   TXT record: dig example.com TXT
+  5.   Attempt a zone transfer (often blocked on hardened servers): dig axfr example.com @ns1.example.com
+  6.   Reverse DNS lookup: dig -x <ip-address>
+  7.   Compile all discovered DNS records for the reconnaissance report.
+
+
+
+
+                                                           44
+

@@ -1,0 +1,21 @@
+                                                                                               Cyber Security Practical Lab Manual
+
+Practical No. 40
+
+Generate a Network Topology Map Using Nmap Scripting
+Aim: To discover live hosts and visualise the network topology of a subnet using Nmap/Zenmap.
+Tools / Requirements: Kali Linux, Nmap, Zenmap (GUI)
+Procedure:
+  1.   Discover live hosts with ping sweep: nmap -sn <subnet>/24
+  2.   Trace hops to a target: nmap --traceroute <target-ip>
+  3.   Run a geolocation traceroute script: nmap --script traceroute-geolocation <target-ip>
+  4.   Open Zenmap, enter the same scan (e.g. nmap -sS -O --traceroute <subnet>/24) and run it via the GUI.
+  5.   Switch to the Topology tab in Zenmap to view the auto-generated graphical network map of discovered hosts and
+       hops.
+  6.   Export/screenshot the topology map for the report.
+
+
+
+
+                                                               42
+

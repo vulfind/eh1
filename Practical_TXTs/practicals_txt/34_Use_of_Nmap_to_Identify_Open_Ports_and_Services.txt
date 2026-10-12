@@ -1,0 +1,19 @@
+                                                                                                Cyber Security Practical Lab Manual
+
+Practical No. 34
+
+Use of Nmap to Identify Open Ports and Services
+Aim: To identify all open ports and the services running on them for a given target using Nmap.
+Tools / Requirements: Kali Linux, Nmap, target VM
+Procedure:
+  1.   Quick scan of common ports: nmap <target-ip>
+  2.   Full port range: nmap -p- <target-ip>
+  3.   Service/version detection: nmap -sV <target-ip>
+  4.   Combine with default scripts: nmap -sC -sV -p- <target-ip>
+  5.   Tabulate the port number, protocol, state and detected service/version for the report.
+
+
+
+
+                                                              36
+

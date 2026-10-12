@@ -1,0 +1,21 @@
+                                                                                                 Cyber Security Practical Lab Manual
+
+Practical No. 4
+
+Nmap Scan – TCP, UDP, SYN and FIN Scans
+Aim: To perform different types of Nmap port scans against a target and interpret the results.
+Tools / Requirements: Kali Linux, Nmap, target VM (e.g. Metasploitable)
+Procedure:
+  1.   TCP Connect scan (completes full 3-way handshake): nmap -sT <target-ip>
+  2.   UDP scan (probes UDP ports, slower): nmap -sU <target-ip>
+  3.   SYN / stealth scan (sends SYN only, never completes handshake, needs root): sudo nmap -sS <target-ip>
+  4.   FIN scan (sends a FIN flag; relies on RFC793 — closed ports reply RST, open/filtered stay silent — useful for
+       firewall evasion): sudo nmap -sF <target-ip>
+  5.   Scan all ports with version/verbosity: nmap -p- -v <target-ip>
+  6.   Record and compare the open / closed / filtered states reported by each scan type.
+
+
+
+
+                                                              6
+

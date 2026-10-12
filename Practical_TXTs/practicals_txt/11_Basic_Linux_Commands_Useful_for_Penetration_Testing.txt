@@ -1,0 +1,24 @@
+                                                                                          Cyber Security Practical Lab Manual
+
+Practical No. 11
+
+Basic Linux Commands Useful for Penetration Testing
+Aim: To list and practise essential Linux commands used during penetration testing.
+Tools / Requirements: Kali Linux terminal
+Procedure:
+  1.   System info: uname -a, whoami, id, hostname
+  2.   Navigation: pwd, ls -la, cd, find / -name <file>
+  3.   Networking: ip a / ifconfig, netstat -tulpn, ss -tulpn, ping, traceroute
+  4.   Processes: ps aux, top, kill <pid>
+  5.   File handling: cat, grep, less, chmod, chown, tar -xvf, locate, which
+  6.   Privilege/user: sudo, su, passwd
+  7.   Package management: apt update && apt upgrade, apt install <pkg>
+  8.   Remote access/transfer: ssh user@host, scp file user@host:/path, wget/curl <url>
+  9.   Service control: service <name> start/stop, systemctl status <name>
+  10. History/help: history, man <command>
+
+
+
+
+                                                                13
+

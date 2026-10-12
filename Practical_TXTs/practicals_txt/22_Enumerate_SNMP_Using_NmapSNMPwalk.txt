@@ -1,0 +1,19 @@
+                                                                                                 Cyber Security Practical Lab Manual
+
+Practical No. 22
+
+Enumerate SNMP Using Nmap/SNMPwalk
+Aim: To enumerate SNMP service information on a target device.
+Tools / Requirements: Kali Linux, Nmap, snmpwalk, onesixtyone
+Procedure:
+  1.   Scan for the SNMP UDP port with info script: nmap -sU -p 161 --script snmp-info <target-ip>
+  2.   Walk the full MIB tree with the default community string: snmpwalk -v1 -c public <target-ip>
+  3.   Query system information specifically: snmpwalk -v1 -c public <target-ip> 1.3.6.1.2.1.1
+  4.   Brute-force unknown community strings: onesixtyone <target-ip> -c community-strings.txt
+  5.   Record disclosed system details, running processes and software inventory revealed via SNMP.
+
+
+
+
+                                                            24
+

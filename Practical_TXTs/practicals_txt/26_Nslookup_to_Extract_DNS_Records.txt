@@ -1,0 +1,20 @@
+                                                                                  Cyber Security Practical Lab Manual
+
+Practical No. 26
+
+Nslookup to Extract DNS Records
+Aim: To query and extract various DNS record types for a domain using nslookup.
+Tools / Requirements: Kali Linux / Windows terminal, nslookup
+Procedure:
+  1.   A record (default): nslookup example.com
+  2.   MX record: nslookup -type=MX example.com
+  3.   NS record: nslookup -type=NS example.com
+  4.   TXT record: nslookup -type=TXT example.com
+  5.   Query against a specific DNS server: nslookup example.com 8.8.8.8
+  6.   Record all discovered DNS information for the reconnaissance report.
+
+
+
+
+                                                            28
+

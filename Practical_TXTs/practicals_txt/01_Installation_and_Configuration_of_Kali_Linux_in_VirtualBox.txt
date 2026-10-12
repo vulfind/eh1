@@ -1,0 +1,33 @@
+                                                                                                Cyber Security Practical Lab Manual
+
+Practical No. 1
+
+Installation and Configuration of Kali Linux in VirtualBox
+Aim: To install and configure Kali Linux as a guest operating system using Oracle VirtualBox.
+Tools / Requirements: Oracle VirtualBox, Kali Linux ISO/OVA image (kali.org), Host PC with virtualization enabled in
+BIOS
+Procedure:
+  1.   Download and install Oracle VirtualBox from virtualbox.org.
+  2.   Download the Kali Linux ISO (or the pre-built VirtualBox OVA) from kali.org.
+  3.   Open VirtualBox → click New. Name: Kali Linux, Type: Linux, Version: Debian (64-bit).
+  4.   Allocate RAM (minimum 2048 MB, recommended 4096 MB).
+  5.   Create a virtual hard disk: VDI, Dynamically allocated, 40–80 GB.
+  6.   Select the new VM → Settings → Storage → attach the Kali ISO to the optical drive.
+  7.   Settings → System → Processor: enable PAE/NX; enable VT-x/AMD-V (virtualization) if available.
+  8.   Settings → Display → Video Memory 128 MB, enable 3D acceleration.
+  9.   Settings → Network → Adapter 1: NAT (or Bridged, as required for the lab).
+  10. Start the VM, boot from the ISO, choose Graphical Install.
+  11. Select language, location, keyboard layout.
+  12. Set hostname (kali), leave domain blank, set root/user full name and password.
+  13. Partition disks → Guided – use entire disk → Finish partitioning → write changes.
+  14. Wait for the base system to install; keep default software selection (Xfce desktop + top10 tools) and continue.
+  15. Install the GRUB boot loader to the virtual disk.
+  16. Reboot, remove the ISO from the virtual optical drive, and log in with the created credentials.
+  17. Devices → Insert Guest Additions CD image → open the mounted CD → run ./VBoxLinuxAdditions.run → reboot
+      for better display resolution and clipboard sharing.
+
+
+
+
+                                                              3
+

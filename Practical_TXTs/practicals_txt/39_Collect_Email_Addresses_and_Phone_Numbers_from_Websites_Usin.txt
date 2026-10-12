@@ -1,0 +1,20 @@
+                                                                                                Cyber Security Practical Lab Manual
+
+Practical No. 39
+
+Collect Email Addresses and Phone Numbers from Websites Using
+OSINT Tools
+Aim: To gather publicly exposed email addresses and phone numbers of a target organisation using OSINT techniques.
+Tools / Requirements: Kali Linux, theHarvester, Hunter.io (web), Google Dorking
+Procedure:
+  1.   Run theHarvester for emails: theHarvester -d example.com -b all
+  2.   Use Hunter.io in a browser: search the target domain to list discovered email addresses and their sources.
+  3.   Use Google dorking for contact pages: site:example.com "contact" intext:"@example.com"
+  4.   Search for phone numbers using dorks: site:example.com intext:"+91" OR intext:"phone"
+  5.   Cross-verify and compile a consolidated list of discovered emails and phone numbers for the report.
+
+
+
+
+                                                              41
+

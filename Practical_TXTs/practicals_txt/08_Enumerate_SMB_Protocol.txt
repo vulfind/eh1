@@ -1,0 +1,19 @@
+                                                                                               Cyber Security Practical Lab Manual
+
+Practical No. 8
+
+Enumerate SMB Protocol
+Aim: To enumerate SMB shares, users and OS information on a target using Nmap, enum4linux and smbclient.
+Tools / Requirements: Kali Linux, Nmap, enum4linux, smbclient, target with SMB open (e.g. Metasploitable)
+Procedure:
+  1.   Scan for SMB ports and OS info: nmap -p 139,445 --script smb-os-discovery <target-ip>
+  2.   Full enumeration: enum4linux -a <target-ip> (lists shares, users, groups, password policy, OS version).
+  3.   List shares anonymously: smbclient -L //<target-ip>/ -N
+  4.   Connect to a discovered share: smbclient //<target-ip>/<share> -N
+  5.   Document every share, user and policy detail discovered.
+
+
+
+
+                                                             10
+

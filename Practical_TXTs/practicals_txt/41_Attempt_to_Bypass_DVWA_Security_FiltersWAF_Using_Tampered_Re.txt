@@ -1,0 +1,23 @@
+                                                                                               Cyber Security Practical Lab Manual
+
+Practical No. 41
+
+Attempt to Bypass DVWA Security Filters/WAF Using Tampered
+Requests in Burp Suite
+Aim: To bypass input-validation/WAF filters in DVWA by tampering with requests in Burp Suite.
+Tools / Requirements: Kali Linux, Burp Suite, DVWA set to Medium/High security (or with a WAF/mod_security enabled)
+Procedure:
+  1.   Configure the browser to proxy through Burp (127.0.0.1:8080) and install Burp's CA certificate.
+  2.   Attempt a normal SQL injection payload on the SQL Injection module at Medium/High security; note it gets
+       blocked/filtered.
+  3.   Capture the request in Burp Proxy → send to Repeater.
+  4.   Tamper with the payload to evade the filter, e.g. using inline comments (UNION/**/SELECT), case variation (UnIoN
+       SeLeCt), or URL encoding (uni%6fn select).
+  5.   Resend the modified request from Repeater and observe whether the filter is bypassed and data is returned.
+  6.   Document which tampering technique succeeded and recommend layered server-side validation as the real fix.
+
+
+
+
+                                                             43
+
